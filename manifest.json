@@ -1,0 +1,21 @@
+{
+  "name": "Image Checker",
+  "version": "1.0",
+  "description": "不適切な画像リンクを検出する",
+  "manifest_version": 2,
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["content.js"],
+    "run_at": "document_end"
+  }],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_title": "Sample",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "https://westcentralus.api.cognitive.microsoft.com/vision/*"
+  ]
+}
